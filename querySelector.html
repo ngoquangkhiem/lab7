@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>querySelector() Method</title>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <div>
+    <p class="example" style="color:green;background-color:lightblue;">This is the first paragraph with class="example".
+    </p>
+    <p class="example">This is another paragraph.</p>
+    <a href="" target="" style="color: blue">Link with target attribute</a>
+    <br>
+    <button onclick="changeStyles()">Change</button>
+  </div>
+  <script>
+    function changeStyles() {
+
+      // Change font size and color of first p element with a div parent
+      var divP = document.querySelector("div > p"); //lấy phần tử đầu tiên là con trực tiếp của phần tử div rồi đổi
+      divP.style.fontSize = '20px';
+      divP.style.backgroundColor = "yellow";
+      divP.style.color = 'blue';
+
+      // Add red border to first link with target attribute
+      document.querySelector("a[target]").style.border = "2px solid red";  //lấy phần tử đầu tiên trên trang có thuộc tính target..
+    }
+  </script>
+</body>
+
+</html>

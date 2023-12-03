@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML DOM querySelectorAll() Method</title>
+  <meta charset="utf-8" />
+  <style>
+    a[target] {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="example" style="background-color: lightblue;border:1px solid;width: 600px;">This is the first paragraph with class="example".</p>
+  <p class="example" style="background-color: lightblue;border:1px solid;width: 600px;;">Another paragraph with class="example".</p>
+
+  <p>This is a regular paragraph.</p>
+
+  <a href="" target="" style="color: blue">Link with target attribute</a>
+  <br>
+  <br>
+  <a href="" target="" style="color: blue">Another link with target attribute</a>
+
+  <h1 class="title" style="color: purple">Title 1</h1>
+  <h2 class="title" style="color: purple">Title 2</h2>
+  <button onclick="Click()">Change</button>
+
+  <script>
+    function Click() {
+
+      // ClassExample
+      var example = document.querySelectorAll(".example");
+      example[0].style.backgroundColor = "yellow";
+      for (let item of example){
+        item.style.margin = "10px"; // Thay đổi margin
+        item.style.padding = "10px"; // Thay đổi padding
+        item.style.border = "2px solid green"; // Thêm border
+      }
+
+      // Target
+      var links = document.querySelectorAll("a[target]");
+      for (let items of links) {
+        items.style.border = "2px solid red";
+        items.style.textDecoration = "none"; // xoa gach chan
+      }
+  
+      // h1 , h2
+      let hE = document.querySelectorAll(".title");
+      for (let item of hE) {
+        item.style.color = "orange";
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>
